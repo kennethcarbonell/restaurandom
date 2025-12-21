@@ -2,25 +2,29 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [randomRestaurant, setRandomRestaurant] = useState(null);
-  const getRandomRestaurant = () => {
-    fetch('http://localhost:8000/restaurants/random')
-      .then(response => response.json())
-      .then(data => setRandomRestaurant(data))
+  const [restaurant, setRestaurant] = useState(null)
+
+  const getRandomRestaurant = async () => {
+    const res = await fetch('http://localhost:8000/restaurants/random')
+    const data = await res.json()
+    setRestaurant(data)
   }
 
   return (
     <>
+      <div class="card">
       <h1>Restaurandom</h1>
-      <div className="card">
-        <button onClick={getRandomRestaurant}>
-          Click for a random restaurant!
-        </button>
-        {randomRestaurant && (
-          <div className="restaurant">
-            <p>{randomRestaurant.name} - {randomRestaurant.category}</p>
-          </div>
-        )}
+
+      <button onClick={getRandomRestaurant}>
+        Click for a random restaurant!
+      </button>
+
+      {restaurant && (
+        <div className="restaurant">
+          <p>{restaurant.name}</p>
+          <p>{restaurant.category}</p>
+        </div>
+      )}
       </div>
     </>
   )

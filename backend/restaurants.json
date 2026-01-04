@@ -1,7 +1,46 @@
-[
-  { "name": "Leo's Tacos", "category": "Mexican" },
-  { "name": "Tokyo Sushi", "category": "Japanese" },
-  { "name": "Burger Joint", "category": "American" },
-  { "name": "Szechuan Express", "category": "Chinese"},
-  { "name": "Mama Mia", "category": "Italian"}
-]
+{
+  "next_id": 6,
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Sushi Gen",
+      "ethnicity": [
+        "japanese"
+      ],
+      "foodTypes": [
+        "sushi",
+        "seafood"
+      ],
+      "price": "$$",
+      "location": "Downtown",
+      "notes": ""
+    },
+    {
+      "id": 2,
+      "name": "Pho 79",
+      "ethnicity": [
+        "vietnamese"
+      ],
+      "foodTypes": [
+        "soup",
+        "noodles"
+      ],
+      "price": "$",
+      "location": "Westside",
+      "notes": ""
+    },
+    {
+      "id": 3,
+      "name": "Olive Garden",
+      "ethnicity": [
+        "italian"
+      ],
+      "foodTypes": [
+        "pasta"
+      ],
+      "price": "$$",
+      "location": "Mall",
+      "notes": "Basic but consistent"
+    }
+  ]
+}
